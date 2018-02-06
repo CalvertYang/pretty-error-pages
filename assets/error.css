@@ -1,0 +1,147 @@
+body {
+  background-color: #fefefe;
+  font-family: Helvetica;
+  padding: 0;
+  margin: 0 0 60px 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.error-container {
+  display: flex;
+  width: 800px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.error-message h1 {
+  font-size: 250px;
+  letter-spacing: 9px;
+  margin: 0;
+}
+
+.error-message p {
+  text-align: center;
+  letter-spacing: 9px;
+  font-size: 36px;
+  margin: 0;
+}
+
+.chicken {
+  position: relative;
+  cursor: pointer;
+  height: 400px;
+  width: 280px;
+  right: 0;
+}
+
+/* .chicken-head-block {
+  position: relative;
+  z-index: 2;
+} */
+
+.chicken-head {
+  position: absolute;
+  z-index: 2;
+  width: 67px;
+  height: 112px;
+  top: 5px;
+  left: 90px;
+  background-image: url('images/chicken-head.png');
+  background-size: cover;
+}
+
+.chicken-eye {
+  position: absolute;
+  z-index: 3;
+  width: 9px;
+  height: 9px;
+  background-size: cover;
+}
+
+.chicken-eye.normal {
+  background-image: url('images/eye-normal.png');
+}
+
+.chicken-eye.dizzy {
+  background-image: url('images/eye-dizzy.png');
+  -webkit-animation: spin 0.8s linear infinite;
+  -moz-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+}
+
+.chicken-eye.dead {
+  background-image: url('images/eye-dead.png');
+}
+
+.chicken-eye.left {
+  top: 53px;
+  left: 9px;
+}
+
+.chicken-eye.right {
+  top: 53px;
+  left: 49px;
+}
+
+.chicken-blood {
+  position: absolute;
+  z-index: 2;
+  visibility: hidden;
+  width: 128px;
+  height: 143px;
+  top: 45px;
+  left: 60px;
+  background-image: url('images/blood.png');
+  background-size: cover;
+}
+
+.chicken-body {
+  position: absolute;
+  width: 243px;
+  height: 331px;
+  top: 35px;
+  background-image: url('images/chicken-body.png');
+  background-size: cover;
+}
+
+@media screen and (max-width: 700px) {
+  .error-container {
+    flex-direction: column;
+  }
+
+  .error-message h1 {
+    font-size: 200px;
+    text-align: center;
+  }
+
+  .chicken {
+    position: relative;
+  }
+
+  .chicken-head {
+    top: 20px;
+    left: 120px;
+  }
+
+  .chicken-blood {
+    top: 60px;
+    left: 90px;
+  }
+
+  .chicken-body {
+    top: 50px;
+    left: 30px;
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+  }
+}
